@@ -13,5 +13,41 @@ namespace TicTacToe {
         public Form1 () {
             InitializeComponent();
         }
+
+        private void btnUpperLeft_Click (object sender, EventArgs e) {
+
+        }
+
+        private void btnUpperMid_Click (object sender, EventArgs e) {
+
+        }
+
+        private void btnUpperRight_Click (object sender, EventArgs e) {
+
+        }
+
+        private void btnMidLeft_Click (object sender, EventArgs e) {
+
+        }
+
+        private void btnMidMid_Click (object sender, EventArgs e) {
+
+        }
+
+        private void btnMidRight_Click (object sender, EventArgs e) {
+
+        }
+
+        private void btnLowerLeft_Click (object sender, EventArgs e) {
+
+        }
+
+        private void btnLowerMid_Click (object sender, EventArgs e) {
+
+        }
+
+        private void btnLowerRight_Click (object sender, EventArgs e) {
+
+        }
     }
 }
