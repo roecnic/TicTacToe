@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TicTacToe {
-    public partial class Form1 : Form {
+    public partial class TicTacToeForm : System.Windows.Forms.Form {
 
         private int turnCounter = 0;
 
-        public Form1 () {
+        public TicTacToeForm () {
             InitializeComponent();
         }
 

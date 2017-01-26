@@ -1,5 +1,5 @@
 ﻿namespace TicTacToe {
-    partial class Form1 {
+    partial class TicTacToeForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -115,7 +115,7 @@
             this.btnLowerRight.UseVisualStyleBackColor = true;
             this.btnLowerRight.Click += new System.EventHandler(this.btnLowerRight_Click);
             // 
-            // Form1
+            // TicTacToeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,8 +129,8 @@
             this.Controls.Add(this.btnUpperRight);
             this.Controls.Add(this.btnUpperMid);
             this.Controls.Add(this.btnUpperLeft);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "TicTacToeForm";
+            this.Text = "Tic-Tac-Toe";
             this.ResumeLayout(false);
 
         }
