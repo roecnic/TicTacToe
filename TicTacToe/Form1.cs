@@ -19,38 +19,47 @@ namespace TicTacToe {
 
         private void btnUpperLeft_Click (object sender, EventArgs e) {
             btnUpperLeft.Text = SetPlayerValue(btnUpperLeft.Text);
+            RoundIsOver();
         }
 
         private void btnUpperMid_Click (object sender, EventArgs e) {
             btnUpperMid.Text = SetPlayerValue(btnUpperMid.Text);
+            RoundIsOver();
         }
 
         private void btnUpperRight_Click (object sender, EventArgs e) {
             btnUpperRight.Text = SetPlayerValue(btnUpperRight.Text);
+            RoundIsOver();
         }
 
         private void btnMidLeft_Click (object sender, EventArgs e) {
             btnMidLeft.Text = SetPlayerValue(btnMidLeft.Text);
+            RoundIsOver();
         }
 
         private void btnMidMid_Click (object sender, EventArgs e) {
             btnMidMid.Text = SetPlayerValue(btnMidMid.Text);
+            RoundIsOver();
         }
 
         private void btnMidRight_Click (object sender, EventArgs e) {
             btnMidRight.Text = SetPlayerValue(btnMidRight.Text);
+            RoundIsOver();
         }
 
         private void btnLowerLeft_Click (object sender, EventArgs e) {
             btnLowerLeft.Text = SetPlayerValue(btnLowerLeft.Text);
+            RoundIsOver();
         }
 
         private void btnLowerMid_Click (object sender, EventArgs e) {
             btnLowerMid.Text = SetPlayerValue(btnLowerMid.Text);
+            RoundIsOver();
         }
 
         private void btnLowerRight_Click (object sender, EventArgs e) {
             btnLowerRight.Text = SetPlayerValue(btnLowerRight.Text);
+            RoundIsOver();
         }
 
 
@@ -103,6 +112,35 @@ namespace TicTacToe {
             }
 
             return "null";
+        }
+
+        private void RoundIsOver () {
+            var winner = SelectWinner();
+            if (!winner.Equals("null")) {
+                var result = MessageBox.Show("The winner is " + winner + "!" + '\n' +
+                    "Congratulations!" + '\n' + '\n' +
+                    "Start again?", "Congratulations!", MessageBoxButtons.YesNo);
+
+                switch (result) {
+                    case DialogResult.Yes:
+                        btnUpperLeft.Text = "";
+                        btnUpperMid.Text = "";
+                        btnUpperRight.Text = "";
+                        btnMidLeft.Text = "";
+                        btnMidMid.Text = "";
+                        btnMidRight.Text = "";
+                        btnLowerLeft.Text = "";
+                        btnLowerMid.Text = "";
+                        btnLowerRight.Text = "";
+
+                        turnCounter = 0;
+                        break;
+
+                    case DialogResult.No:
+                        this.Close();
+                        break;
+                }
+            }
         }
     }
 }
