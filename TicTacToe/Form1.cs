@@ -92,23 +92,24 @@ namespace TicTacToe {
 
 
         private String SelectWinner () {
-            if (!btnUpperLeft.Text.Equals("")) {
-                if((btnUpperLeft.Text.Equals(btnUpperMid.Text) && btnUpperLeft.Text.Equals(btnUpperRight.Text)) ||
-                    (btnUpperLeft.Text.Equals(btnMidLeft.Text) && btnUpperLeft.Text.Equals(btnLowerLeft.Text)) ||
-                    (btnUpperLeft.Text.Equals(btnMidMid.Text) && btnUpperLeft.Text.Equals(btnLowerRight.Text))) {
-                    return btnUpperLeft.Text;
-                }
-            } else if (!btnLowerRight.Text.Equals("")) {
-                if((btnLowerRight.Text.Equals(btnLowerMid.Text) && btnLowerRight.Text.Equals(btnLowerLeft.Text)) ||
-                    (btnLowerRight.Text.Equals(btnMidRight.Text) && btnLowerRight.Text.Equals(btnUpperRight.Text))) {
-                    return btnLowerRight.Text;
-                }
+            if (!btnUpperLeft.Text.Equals("") && btnUpperLeft.Text.Equals(btnUpperMid.Text) && btnUpperLeft.Text.Equals(btnUpperRight.Text)) {
+                return "win for " + btnUpperLeft.Text;
+            } else if (!btnUpperLeft.Text.Equals("") && btnUpperLeft.Text.Equals(btnMidLeft.Text) && btnUpperLeft.Text.Equals(btnLowerLeft.Text)) {
+                return "win for " + btnUpperLeft.Text;
+            } else if (!btnUpperLeft.Text.Equals("") && btnUpperLeft.Text.Equals(btnMidMid.Text) && btnUpperLeft.Text.Equals(btnLowerRight.Text)) {
+                return "win for " + btnUpperLeft.Text;
+            } else if (!btnLowerRight.Text.Equals("") && btnLowerRight.Text.Equals(btnLowerMid.Text) && btnLowerRight.Text.Equals(btnLowerLeft.Text)) {
+                return "win for " + btnLowerRight.Text;
+            } else if (!btnLowerRight.Text.Equals("") && btnLowerRight.Text.Equals(btnMidRight.Text) && btnLowerRight.Text.Equals(btnUpperRight.Text)) {
+                return "win for " + btnLowerRight.Text;
             } else if (!btnMidLeft.Text.Equals("") && btnMidLeft.Text.Equals(btnMidMid.Text) && btnMidLeft.Text.Equals(btnMidRight.Text)) {
-                return btnMidLeft.Text;
+                return "win for " + btnMidLeft.Text;
             } else if (!btnLowerLeft.Text.Equals("") && btnLowerLeft.Text.Equals(btnMidMid.Text) && btnLowerLeft.Text.Equals(btnUpperRight.Text)) {
-                return btnLowerLeft.Text;
-            }else if (!btnUpperMid.Text.Equals("") && btnUpperMid.Text.Equals(btnMidMid.Text) && btnUpperMid.Text.Equals(btnLowerMid.Text)) {
-                return btnUpperMid.Text;
+                return "win for " + btnLowerLeft.Text;
+            } else if (!btnUpperMid.Text.Equals("") && btnUpperMid.Text.Equals(btnMidMid.Text) && btnUpperMid.Text.Equals(btnLowerMid.Text)) {
+                return "win for " + btnUpperMid.Text;
+            } else if (turnCounter > 8) {
+                return "draw";
             }
 
             return "null";
@@ -117,8 +118,7 @@ namespace TicTacToe {
         private void RoundIsOver () {
             var winner = SelectWinner();
             if (!winner.Equals("null")) {
-                var result = MessageBox.Show("The winner is " + winner + "!" + '\n' +
-                    "Congratulations!" + '\n' + '\n' +
+                var result = MessageBox.Show("It is a " + winner + "!" + '\n' + '\n' +
                     "Start again?", "Congratulations!", MessageBoxButtons.YesNo);
 
                 switch (result) {
