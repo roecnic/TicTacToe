@@ -80,5 +80,29 @@ namespace TicTacToe {
                     return "";
             }
         }
+
+
+        private String SelectWinner () {
+            if (!btnUpperLeft.Text.Equals("")) {
+                if((btnUpperLeft.Text.Equals(btnUpperMid.Text) && btnUpperLeft.Text.Equals(btnUpperRight.Text)) ||
+                    (btnUpperLeft.Text.Equals(btnMidLeft.Text) && btnUpperLeft.Text.Equals(btnLowerLeft.Text)) ||
+                    (btnUpperLeft.Text.Equals(btnMidMid.Text) && btnUpperLeft.Text.Equals(btnLowerRight.Text))) {
+                    return btnUpperLeft.Text;
+                }
+            } else if (!btnLowerRight.Text.Equals("")) {
+                if((btnLowerRight.Text.Equals(btnLowerMid.Text) && btnLowerRight.Text.Equals(btnLowerLeft.Text)) ||
+                    (btnLowerRight.Text.Equals(btnMidRight.Text) && btnLowerRight.Text.Equals(btnUpperRight.Text))) {
+                    return btnLowerRight.Text;
+                }
+            } else if (!btnMidLeft.Text.Equals("") && btnMidLeft.Text.Equals(btnMidMid.Text) && btnMidLeft.Text.Equals(btnMidRight.Text)) {
+                return btnMidLeft.Text;
+            } else if (!btnLowerLeft.Text.Equals("") && btnLowerLeft.Text.Equals(btnMidMid.Text) && btnLowerLeft.Text.Equals(btnUpperRight.Text)) {
+                return btnLowerLeft.Text;
+            }else if (!btnUpperMid.Text.Equals("") && btnUpperMid.Text.Equals(btnMidMid.Text) && btnUpperMid.Text.Equals(btnLowerMid.Text)) {
+                return btnUpperMid.Text;
+            }
+
+            return "null";
+        }
     }
 }
