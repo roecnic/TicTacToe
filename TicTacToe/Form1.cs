@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TicTacToe {
-    public partial class TicTacToeForm : System.Windows.Forms.Form {
+    public partial class TicTacToeForm : Form {
 
         private int turnCounter = 0;
 
